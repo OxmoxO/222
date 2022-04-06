@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Auto</title>
+    <title>Title</title>
+    <style>
+
+        table th, table td {padding: 5px;}
+
+        .row  {
+            font-style: normal;
+        }
+        .even-row {
+            color: black;
+        }
+        .odd-row {
+            color: rgba(231, 228, 4, 0.78);
+        }
+    </style>
+</head>
+
+<body style="color: #07484d; background-color: #1b8ab4">
+<h1>Hello, Your Most Gracious Honor, Mentor</h1>
+<p> Kak ya ZAeoGILAS stolko znatj and vezde suvatj my nose.</p>
+<ins style="font-size: 16px">My bashka uge shaytanama!Menya presledujut 2 illusions:"You don't need to know English"; fairytale "Cereal from an axe"</ins>
+<br>
+<i style="color: #07484d"> How do you work poor? Now I understand why such salaries! I thought it was easy money! Huston, nas nae.../veli v zablusghdenyee</i>
+<h2>Automobile</h2>
+
+<table border = "1">
+    <tr>
+        <th>Number</th>
+        <th>Creator</th>
+        <th>Series</th>
+        <th>Date</th>
+    </tr>
+
+    <tr th:each="Car, state : ${cars}"
+        class="row" th:classappend="${state.odd} ? 'odd-row' : 'even-row'">
+        <td th:text="${state.count}">Number</td>
+        <td th:text="${Car.creator}">Creator</td>
+        <td th:text="${Car.series}">Series</td>
+        <td th:text="${Car.date}">Date</td>
+
+    </tr>
+
+</table>
+
+</body>
+</html>
